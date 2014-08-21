@@ -52,9 +52,7 @@ def scrape(url):
 	recipe["name"]=name
 	
 	ingredients = []
-#	table = bs.find("dl", {'class': "list-ingredients"})
 	for row in bs.findAll("dl", {'itemprop': "ingredients"}):
-#		print (row)
 		amounts = []
 		names = []
 		for dts in row.findAll("dt"):
@@ -73,12 +71,8 @@ def scrape(url):
 	instructions = []
 	ul = bs.find("ul", {'itemprop':"recipeInstructions"})
 	for li in ul.findAll("li"):
-		#print (li.findAll("span"))
-		#print (li)
 		instructions.append(li.findAll("span")[1].get_text())
 
-
-	
 	recipe["instructions"]="".join(instructions)
 	recipe["ingredients"]=ingredients
 	print (json.dumps(recipe))
