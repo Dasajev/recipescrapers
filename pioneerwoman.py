@@ -58,10 +58,9 @@ def scrape(url):
 	names = names[1:]
 	for idx, name in enumerate(names):
 		ingredient = {}
-		ingredient["amount"] = amounts[idx].get_text()
-		ingredient["name"] = name.get_text()
+		ingredient["amount"] = amounts[idx].get_text().strip()
+		ingredient["name"] = name.get_text().strip()
 		ingredients.append(ingredient)
-		print (ingredient)
 
 	div = bs.find("div", {'itemprop':"instructions"})
 	instructions = div.get_text().strip()
@@ -73,5 +72,5 @@ def scrape(url):
 
 
 if __name__ == '__main__':
-	url = u"http://thepioneerwoman.com/cooking/2014/02/chicken-mozzarella-pasta/"
+	url = u"http://thepioneerwoman.com/cooking/2014/09/shells-cheese-and-bacon-and-peas/"
 	scrape(url)
