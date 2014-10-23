@@ -42,12 +42,7 @@ def scrape(url):
 	div = bs.find("div", {'class':"instructions"})
 	instructions = div.get_text().strip()
 
-	
 	recipe["instructions"]=instructions
 	recipe["ingredients"]=ingredients
-	print (json.dumps(recipe))
 
-
-if __name__ == '__main__':
-	url = u"http://www.kotikokki.net/reseptit/nayta/224035/Hapanimelää%20broileria%20%22thaimaalaisittain%22/"
-	scrape(url)
+	return json.dumps(recipe)

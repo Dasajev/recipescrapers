@@ -1,9 +1,7 @@
  # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals, print_function, division
+from __future__ import unicode_literals, division
 from bs4 import BeautifulSoup
-import requests
-import re
 import json
 import utils
 
@@ -43,9 +41,7 @@ def scrape(url):
 
 	recipe["instructions"]="".join(instructions)
 	recipe["ingredients"]=ingredients
-	print (json.dumps(recipe))
+
+	return json.dumps(recipe)
 
 
-if __name__ == '__main__':
-	url = u"http://www.k-ruoka.fi/reseptit/valimeren-kasvispiirakka"
-	scrape(url)

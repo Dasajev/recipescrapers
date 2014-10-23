@@ -35,9 +35,4 @@ def scrape(url):
 	
 	recipe["instructions"]=instructions
 	recipe["ingredients"]=ingredients
-	print (json.dumps(recipe))
-
-
-if __name__ == '__main__':
-	url = u"http://thepioneerwoman.com/cooking/2014/09/shells-cheese-and-bacon-and-peas/"
-	scrape(url)
+	return json.dumps(recipe)
