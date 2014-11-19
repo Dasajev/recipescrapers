@@ -1,6 +1,7 @@
 import k_ruoka
 import pioneerwoman
 import kotikokki
+import budgetbytes
 import argparse
 
 if __name__ == '__main__':
@@ -16,3 +17,5 @@ if __name__ == '__main__':
 		print (k_ruoka.scrape(url))
 	elif "kotikokki.net" in url:
 		print (kotikokki.scrape(url))
+	elif "budgetbytes.com" in url:
+		print (budgetbytes.scrape(url))
